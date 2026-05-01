@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Мамадов Иброхим — начинающий разработчик. Машинное обучение, Android, Python, Kotlin, Flutter.">
+    <title>Иброхим Мамадов — Разработчик</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Иброхим.dev</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#skills" class="nav-link">Навыки</a>
+                <a href="#achievements" class="nav-link">Достижения</a>
+                <a href="#stats" class="nav-link">Статистика</a>
+                <a href="#contact" class="nav-link">Контакт</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">Обо мне</a>
+        <a href="#skills" class="mobile-link">Навыки</a>
+        <a href="#achievements" class="mobile-link">Достижения</a>
+        <a href="#stats" class="mobile-link">Статистика</a>
+        <a href="#contact" class="mobile-link">Контакт</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <span class="badge-dot"></span>
+                <span>Начинающий разработчик</span>
+            </div>
+            <h1 class="hero-title reveal-up" style="--delay: 0.1s">
+                <span class="title-line">Привет, я</span>
+                <span class="title-gradient">Иброхим Мамадов</span>
+            </h1>
+            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">
+                Увлекаюсь <span class="highlight">машинным обучением</span> и Android-разработкой. 
+                Призёр республиканской олимпиады по математике. Стажёр <span class="highlight">zypl.ai</span>.
+            </p>
+            <div class="hero-actions reveal-up" style="--delay: 0.3s">
+                <a href="#about" class="btn btn-primary">
+                    <span>Узнать больше</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17l9.2-9.2M17 17V7.8M17 7.8H7.8"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">Связаться</a>
+            </div>
+            <div class="hero-scroll-indicator reveal-up" style="--delay: 0.5s">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span>Прокрутите вниз</span>
+            </div>
+        </div>
+        <div class="hero-visual reveal-scale" style="--delay: 0.3s">
+            <div class="hero-sphere">
+                <div class="sphere-ring ring-1"></div>
+                <div class="sphere-ring ring-2"></div>
+                <div class="sphere-ring ring-3"></div>
+                <div class="sphere-core"></div>
+                <div class="sphere-particles">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">ОБО МНЕ</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Мои <span class="text-gradient">направления</span>
+                </h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card reveal-left" style="--delay: 0.2s">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Машинное обучение</h3>
+                    <p>Глубоко изучаю ML и статистику. Прошёл стажировку в zypl.ai, где освоил продвинутые концепции машинного обучения и анализа данных.</p>
+                </div>
+                <div class="about-card glass-card reveal-up" style="--delay: 0.3s">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Android-разработка</h3>
+                    <p>Создаю мобильные приложения на Kotlin и Flutter. Увлекаюсь построением удобных и красивых интерфейсов для пользователей.</p>
+                </div>
+                <div class="about-card glass-card reveal-right" style="--delay: 0.4s">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Математика</h3>
+                    <p>Увлекаюсь математикой с детства. Участвовал в республиканской олимпиаде и занял призовые 2-е и 3-е места.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">ТЕХНОЛОГИИ</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Мой <span class="text-gradient">стек</span>
+                </h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item reveal-up" style="--delay: 0.1s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">🐍</span></div>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.15s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">📱</span></div>
+                    <span class="skill-name">Kotlin</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.2s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">🦋</span></div>
+                    <span class="skill-name">Flutter</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.25s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">🧠</span></div>
+                    <span class="skill-name">ML/AI</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.3s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">📊</span></div>
+                    <span class="skill-name">Статистика</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.35s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">🤖</span></div>
+                    <span class="skill-name">Android</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.4s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">🔢</span></div>
+                    <span class="skill-name">Математика</span>
+                </div>
+                <div class="skill-item reveal-up" style="--delay: 0.45s">
+                    <div class="skill-icon-wrap"><span class="skill-emoji">📈</span></div>
+                    <span class="skill-name">Data Science</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section achievements" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">ДОСТИЖЕНИЯ</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Чем я <span class="text-gradient">горжусь</span>
+                </h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-left" style="--delay: 0.2s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <span class="timeline-date">🏅 Олимпиада</span>
+                        <h3>Призёр республиканской олимпиады по математике</h3>
+                        <p>Занял 2-е и 3-е места на республиканской олимпиаде. Математика — моя страсть, которая помогает мне в алгоритмах и ML.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right" style="--delay: 0.3s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <span class="timeline-date">🤖 Стажировка</span>
+                        <h3>Стажёр в zypl.ai</h3>
+                        <p>Прошёл стажировку в местной ИИ-компании zypl.ai. Углубился в машинное обучение, статистику и реальные ML-пайплайны.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-left" style="--delay: 0.4s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <span class="timeline-date">📱 Мобильная разработка</span>
+                        <h3>Android & Flutter</h3>
+                        <p>Изучил Kotlin для Android-разработки и Flutter для кроссплатформенных приложений. Создаю мобильные решения с нуля.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right" style="--delay: 0.5s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <span class="timeline-date">🐍 Python & ML</span>
+                        <h3>Путь в машинное обучение</h3>
+                        <p>Начал путь разработчика с Python. Изучаю нейросети, обработку данных и алгоритмы — стремлюсь стать экспертом в области AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats" id="stats">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">В ЦИФРАХ</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Впечатляющая <span class="text-gradient">статистика</span>
+                </h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card glass-card reveal-up" style="--delay: 0.2s">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-suffix"></div>
+                    <div class="stat-label">Языка программирования</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--width: 60%"></div></div>
+                </div>
+                <div class="stat-card glass-card reveal-up" style="--delay: 0.3s">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-suffix"></div>
+                    <div class="stat-label">Призовых места на олимпиаде</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--width: 85%"></div></div>
+                </div>
+                <div class="stat-card glass-card reveal-up" style="--delay: 0.4s">
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-suffix"></div>
+                    <div class="stat-label">Стажировка в AI-компании</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--width: 100%"></div></div>
+                </div>
+                <div class="stat-card glass-card reveal-up" style="--delay: 0.5s">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Мотивация и драйв</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--width: 100%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">КОНТАКТ</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Давайте <span class="text-gradient">сотрудничать</span>
+                </h2>
+                <p class="section-desc reveal-up" style="--delay: 0.2s">
+                    Открыт к новым проектам, стажировкам и сотрудничеству
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card glass-card reveal-left" style="--delay: 0.3s">
+                    <div class="contact-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>Напишите мне в Telegram — я всегда на связи и отвечу быстро</p>
+                </div>
+                <div class="contact-card glass-card reveal-up" style="--delay: 0.4s">
+                    <div class="contact-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Найдите меня в LinkedIn — давайте свяжемся профессионально</p>
+                </div>
+                <div class="contact-card glass-card reveal-right" style="--delay: 0.5s">
+                    <div class="contact-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                        </svg>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Мои проекты и код — всё в открытом доступе на GitHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">◆</span>
+                    <span>Иброхим.dev</span>
+                </div>
+                <p class="footer-text">Иброхим Мамадов © 2026 · Создано с ❤️</p>
+                <div class="footer-links">
+                    <a href="#hero">Начало</a>
+                    <a href="#about">Обо мне</a>
+                    <a href="#skills">Навыки</a>
+                    <a href="#achievements">Достижения</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
