@@ -7,16 +7,21 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 revealElements.forEach(el => revealObserver.observe(el));
 
-// ===== NAVBAR SCROLL =====
+// ===== NAVBAR SCROLL (with passive listener) =====
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
+let scrollTicking = false;
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-  lastScroll = window.scrollY;
-});
+  if (!scrollTicking) {
+    requestAnimationFrame(() => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      scrollTicking = false;
+    });
+    scrollTicking = true;
+  }
+}, { passive: true });
 
 // ===== MOBILE MENU =====
 const navToggle = document.getElementById('navToggle');
@@ -32,28 +37,36 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   });
 });
 
-// ===== CURSOR GLOW =====
+// ===== CURSOR GLOW (desktop only, with rAF) =====
 const cursorGlow = document.getElementById('cursorGlow');
-if (window.matchMedia('(pointer: fine)').matches) {
+const isMobile = !window.matchMedia('(pointer: fine)').matches || window.innerWidth <= 900;
+if (!isMobile && cursorGlow) {
+  let glowX = 0, glowY = 0, currentX = 0, currentY = 0;
   document.addEventListener('mousemove', (e) => {
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top = e.clientY + 'px';
-  });
-} else {
+    glowX = e.clientX;
+    glowY = e.clientY;
+  }, { passive: true });
+  function updateGlow() {
+    currentX += (glowX - currentX) * 0.15;
+    currentY += (glowY - currentY) * 0.15;
+    cursorGlow.style.transform = `translate(${currentX - 250}px, ${currentY - 250}px)`;
+    requestAnimationFrame(updateGlow);
+  }
+  requestAnimationFrame(updateGlow);
+} else if (cursorGlow) {
   cursorGlow.style.display = 'none';
 }
 
 // ===== ANIMATED COUNTERS =====
 function animateCounter(el, target) {
-  const duration = 2000;
+  const duration = 1500;
   const start = performance.now();
-  const fmt = (n) => n >= 1000000 ? (n/1000000).toFixed(0) + 'M' : n >= 1000 ? (n/1000).toFixed(0) + 'K' : n.toString();
   function tick(now) {
     const elapsed = now - start;
     const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 4);
+    const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(eased * target);
-    el.textContent = fmt(current);
+    el.textContent = current.toString();
     if (progress < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -69,7 +82,7 @@ const statsObserver = new IntersectionObserver((entries) => {
       statsObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
 statCards.forEach(card => statsObserver.observe(card));
 
 // ===== SMOOTH ANCHOR SCROLLING =====
@@ -93,5 +106,14 @@ const sectionObserver = new IntersectionObserver((entries) => {
       });
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
 sections.forEach(s => sectionObserver.observe(s));
+
+// ===== CLEAN UP will-change AFTER ANIMATIONS =====
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.reveal-up.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible').forEach(el => {
+      el.style.willChange = 'auto';
+    });
+  }, 3000);
+});
